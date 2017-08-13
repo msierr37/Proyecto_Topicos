@@ -1,0 +1,165 @@
+
+
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/js/jquery.transform2d.js"></script>
+<script type="text/javascript" src="/js/jquery.grab.js"></script>
+<script type="text/javascript" src="/js/mod.csstransforms.min.js"></script>
+<script type="text/javascript" src="/js/circle.player.js"></script>
+<!--
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="./jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="./jquery.transform2d.js"></script>
+<script type="text/javascript" src="./jquery.grab.js"></script>
+<script type="text/javascript" src="./mod.csstransforms.min.js"></script>
+<script type="text/javascript" src="./circle.player.js"></script>
+-->
+<!-- jquery_jplayer_1 is the id here -->
+
+
+
+<div class="center-xs field",id="bus">
+  <%= form_tag articles_path, method: :get do %>
+    <%= text_field_tag :keyword,nil,placeholder: "¿Que estas buscando?" %>
+    <%= content_tag :button,class:"btn", type: :submit do%>
+      Buscar
+    <% end %>
+  <% end %>
+</div>
+
+    <div id="my-div3">
+      <% @articles.reverse.each do |article| %>
+
+
+      <script type="text/javascript">
+        $(document).ready(function() {
+          var myCirclePlayer = new CirclePlayer("#jquery_jplayer_<%=article.id%>",
+          {
+            mp3: "<%=article.mp3.url%>",
+
+          }, {
+            cssSelectorAncestor: "#cp_container_<%=article.id%>",
+            swfPath: "js",
+            wmode: "window",
+            supplied: "mp3",
+            keyEnabled: true
+          });
+        });
+      </script>
+
+
+      <div id="jquery_jplayer_<%=article.id%>" class="cp-jplayer center-xs"></div>
+        <% if article.privacida == "Publico" %>
+          <div class="center-xs col-md inicio">
+              <h1 class="inicio"><%=link_to article.title, article%></h1>
+              <h5 class="inicio">Artista: <%=article.artista%></h5>
+              <div>
+                <%=article.body%>
+                <p class="inicio center-xs">visitas: <%=article.visit_count%></p>
+                <!-- paste the lines below as it is, it will be required by the circle player -->
+                <div style="width: 120px; margin: 0 auto;">
+                <div id="cp_container_<%=article.id%>" class="center-xs cp-container">
+                 <div class="center-xs cp-buffer-holder">
+                   <div class="center-xs cp-buffer-1"></div>
+                   <div class="center-xs cp-buffer-2"></div>
+                 </div>
+                 <div class="center-xs cp-progress-holder">
+                   <div class="center-xs cp-progress-1"></div>
+                   <div class="center-xs cp-progress-2"></div>
+                 </div>
+                 <div class="center-xs">
+                   <div class="center-xs cp-circle-control "></div>
+                    <ul class="cp-controls">
+                      <li><a class="cp-play reproductor_boton_inicio" tabindex="1"></a></li>
+
+                      <li class="center-xs"><a class="cp-pause boton_pausa_inicio" style="display:none;" tabindex="1"></a></li>
+                    </ul>
+                   </div>
+                 </div>
+                 </div>
+                <% if user_signed_in? and article.user== current_user %>
+                  <div class="ini"><%= link_to "Eliminar", article, method: :delete, class:"red"%></a></div>
+                <% end %>
+              </div>
+            </div>
+        <% end %>
+        <% if  article.privacida == "Privado" and article.user == current_user %>
+            <div class="center-xs col-md inicio">
+              <h1 class="inicio"><%=link_to article.title, article%></h1>
+              <h5 class="inicio">Artista: <%=article.artista%></h5>
+              <div>
+                <%=article.body%>
+                <% if not article.user == nil %>
+                  <p class="inicio center-xs">subido por: <%=article.user.email%></p>
+                  <% else %>
+                  <p>subido por: Cuenta cerrada</p>
+                    <% end %>
+                  <p class="inicio center-xs">visitas: <%=article.visit_count%></p>
+                  <div style="width: 120px; margin: 0 auto;">
+                  <div id="cp_container_<%=article.id%>" class="center-xs cp-container">
+                   <div class="center-xs cp-buffer-holder">
+                     <div class="center-xs cp-buffer-1"></div>
+                     <div class="center-xs cp-buffer-2"></div>
+                   </div>
+                   <div class="center-xs cp-progress-holder">
+                     <div class="center-xs cp-progress-1"></div>
+                     <div class="center-xs cp-progress-2"></div>
+                   </div>
+                   <div class="center-xs">
+                     <div class="center-xs cp-circle-control "></div>
+                      <ul class="cp-controls">
+                        <li><a class="cp-play reproductor_boton_inicio" tabindex="1"></a></li>
+
+                        <li class="center-xs"><a class="cp-pause boton_pausa_inicio" style="display:none;" tabindex="1"></a></li>
+                      </ul>
+                     </div>
+                   </div>
+                   </div>
+                  <% if article.user== current_user %>
+                    <div class="ini"><%= link_to "Eliminar", article, method: :delete, class:"red"%></a></div>
+                  <% end %>
+                </div>
+              </div>
+        <% end %>
+        <% if article.privacida == "Compartido" and user_signed_in? %>
+              <div class="center-xs col-md inicio">
+                <h1 class="inicio"><%=link_to article.title, article%></h1>
+                <h5 class="inicio">Artista: <%=article.artista%></h5>
+                <div>
+                  <%=article.body%>
+                  <% if not article.user == nil %>
+                    <p class="inicio center-xs">subido por: <%=article.user.email%></p>
+                  <% else %>
+                    <p>subido por: Cuenta cerrada</p>
+                  <% end %>
+                    <p class="inicio center-xs">visitas: <%=article.visit_count%></p>
+                    <div style="width: 120px; margin: 0 auto;">
+                    <div id="cp_container_<%=article.id%>" class="center-xs cp-container">
+                     <div class="center-xs cp-buffer-holder">
+                       <div class="center-xs cp-buffer-1"></div>
+                       <div class="center-xs cp-buffer-2"></div>
+                     </div>
+                     <div class="center-xs cp-progress-holder">
+                       <div class="center-xs cp-progress-1"></div>
+                       <div class="center-xs cp-progress-2"></div>
+                     </div>
+                     <div class="center-xs">
+                       <div class="center-xs cp-circle-control "></div>
+                        <ul class="cp-controls">
+                          <li><a class="cp-play reproductor_boton_inicio" tabindex="1"></a></li>
+
+                          <li class="center-xs"><a class="cp-pause boton_pausa_inicio" style="display:none;" tabindex="1"></a></li>
+                        </ul>
+                       </div>
+                     </div>
+                     </div>
+                  <% if article.user == current_user %>
+                    <div class="ini"><%= link_to "Eliminar", article, method: :delete, class:"red"%></a></div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+
+          <%end%>
+      </div>

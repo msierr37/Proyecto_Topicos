@@ -1,0 +1,60 @@
+<header>
+  <div id="my-div4">
+    <nav class="logo pad2 ">
+      <ul class="no-list row center-xs middle-xs">
+        <li class="col-md">
+          <h1 class="no-margin tam">sicMu</h1>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <nav class="be-red white pad_length navbar navbar-default center-xs">
+    <ul class="no-list row center-xs white">
+
+      <%if not user_signed_in? %>
+      <li class="col-md">
+        <%= link_to "Inicio", root_path %>
+      </li>
+      <%else%>
+      <li class="col-md">
+        <%= link_to "Inicio", articles_path %>
+      </li>
+      <%end%>
+      <% if not user_signed_in? %>
+        <li>
+        <%= link_to "Canciones", articles_path %>
+      </li>
+      <% end %>
+      <%if user_signed_in? %>
+      <li class="col-md">
+        <%=link_to "Perfil", edit_user_registration_path %>
+      </li>
+      <%end%>
+      <%if not user_signed_in? %>
+      <li class="col-md">
+        <%=link_to "Ingresar", new_user_session_path%>
+      </li>
+      <%end%>
+      <%if not user_signed_in? %>
+      <li class="col-md">
+        <%=link_to "Registrarse", new_user_registration_path%>
+      </li>
+      <%else%>
+      <li class="col-md">
+        <%=link_to "Agregar cancion", new_article_path %>
+      </li>
+      <%end%>
+      <%if not user_signed_in? %>
+      <li class="col-md">
+        <%=link_to "¿Que es sicMu?", about_index_path %>
+      </li>
+      <%end%>
+      <%if user_signed_in? %>
+      <li class="col-md">
+        <%=link_to "Cerrar sesión",destroy_user_session_path, method: :delete%>
+      </li>
+      <%end%>
+    </ul>
+  </nav>
+</header>

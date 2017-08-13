@@ -1,0 +1,181 @@
+body{
+  margin: 0px;
+  background: url(http://tub.tubgit.com/reimg/resize-img.php?src=http://tub.tubgit.com/images254/zecc0aavdnd.jpg&h=1080&w=1920) 0 0;
+}
+
+html{
+  margin: 0px;
+}
+li{
+  list-style: none;
+}
+.red{
+  background-color: #D6CBC5;
+    border: none;
+    color: white;
+    padding: 5px 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.inicio{
+  color:  #C7B9AB;
+  font-family: 'Bree Serif', serif;
+}
+.ini{
+  color: black;
+  font-family: 'Bree Serif', serif;
+}
+.ed{
+  margin-top: 1em;
+   background-color: #D6CBC5;
+    border: none;
+    color: white;
+    padding: 5px 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#my-div{
+  background-image: url(http://masquevinilo.com/5616-thickbox_default/vinilo-decorativo-saxofon.jpg);
+}
+#my-div3{
+  background-image: url(https://s-media-cache-ak0.pinimg.com/originals/b6/e0/5d/b6e05dc3a29f9aa67351042b9123e1a6.jpg);
+}
+#my-div2{
+  background-image: url(http://3.bp.blogspot.com/-dJY46mQBs2A/U5Y2UkvlYkI/AAAAAAAAB7A/kpIelRkRvjU/s1600/Png_Dibujo.png);
+}
+#my-div4{
+  background-image: url(http://orig13.deviantart.net/a56d/f/2013/038/4/5/notas_musicales_png__recurso_de_tuto__by_paokayeditions-d5u57uz.png);
+}
+.err{
+  margin-top: 1em
+}
+a,a:visited{
+  color: inherit !important;
+  text-decoration: none;
+}
+.be-red{
+background-color: black;
+}
+.white{
+  color: #C7B9AB;
+  font-size: 20px;
+  font-family: 'Bree Serif', serif;
+}
+.pad_length{
+  padding: 6px 10px;
+}
+.field{
+  color: black;
+  margin-top:1em;
+}
+.form-control{
+  opacity:0.7;
+  color: black;
+  border-style: solid;
+  border-color: #323232;
+  border-bottom: 2px solid;
+  outline: none;
+  width: 100%;
+  display: block;
+  padding: 10px 1px;
+  font-size: 1.2em;
+
+}
+.bod{
+  background: url(https://userscontent2.emaze.com/images/bf1e13f6-60a4-48ee-a855-52b31414c1bd/3172b38b-5a28-4c1a-aedb-4f5b666f27de.png) 0 0;
+}
+.btn{
+  background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.crear{
+  color: #C7B9AB;
+}
+.div {
+  background-image:url(images/form_bg.jpg);
+	background-repeat:repeat-x;
+  background-color: #D6CBC5;
+	border:1px solid #d1c7ac;
+	width: 230px;
+	color:#333333;
+	padding:6px;
+	margin-right:9px;
+	margin-bottom:8px;
+	font-family:tahoma, arial, sans-serif;
+}
+.boton{
+  background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.reproductor_boton{
+  background: url(https://image.flaticon.com/icons/png/512/7/7520.png) /* Url de la imagen */ no-repeat center center/* Color del botón */;
+  background-size: 60%; /* Tamaño de la imagen */
+  height: 100px;  /* Alto del botón */
+  width: 100px;  /* Ancho del botón */
+  display: table;
+  border-radius: 100%;
+  cursor: pointer;
+    box-shadow:
+/* Sombras externa */
+inset 0 5px 5px rgba(255,255,255,.35), inset 0 -10px 15px rgba(0,0,0,.05), inset 5px 0 55px rgba(0,0,0,.05), inset -5px 0 5px rgba(0,0,0,.05),
+/* Sombra interna */
+0 5px 20px rgba(0,0,0,.1);
+}
+.boton_pausa{
+  background: url(http://icon-icons.com/icons2/1144/PNG/512/pausebutton_80847.png) /* Url de la imagen */ no-repeat center center/* Color del botón */;
+  background-size: 60%; /* Tamaño de la imagen */
+  height: 100px;  /* Alto del botón */
+  width: 100px;  /* Ancho del botón */
+  display: table;
+  border-radius: 100%;
+  cursor: pointer;
+    box-shadow:
+/* Sombras externa */
+inset 0 10px 15px rgba(255,255,255,.35), inset 0 -10px 15px rgba(0,0,0,.05), inset 10px 0 15px rgba(0,0,0,.05), inset -10px 0 15px rgba(0,0,0,.05),
+/* Sombra interna */
+0 5px 20px rgba(0,0,0,.1);
+}
+.reproductor_boton_inicio{
+  background: url(https://image.flaticon.com/icons/png/512/7/7520.png) /* Url de la imagen */ no-repeat center center , gray/* Color del botón */;
+  background-size: 60%; /* Tamaño de la imagen */
+  height: 50px;  /* Alto del botón */
+  width: 50px;  /* Ancho del botón */
+  display: table;
+  border-radius: 100%;
+  cursor: pointer;
+    box-shadow:
+/* Sombras externa */
+inset 0 5px 5px rgba(255,255,255,.35), inset 0 -10px 15px rgba(0,0,0,.05), inset 5px 0 55px rgba(0,0,0,.05), inset -5px 0 5px rgba(0,0,0,.05),
+/* Sombra interna */
+0 5px 20px rgba(0,0,0,.1);
+}
+.boton_pausa_inicio{
+  background: url(http://icon-icons.com/icons2/1144/PNG/512/pausebutton_80847.png) /* Url de la imagen */ no-repeat center center, gray/* Color del botón */;
+  background-size: 60%; /* Tamaño de la imagen */
+  height: 50px;  /* Alto del botón */
+  width: 50px;  /* Ancho del botón */
+  display: table;
+  border-radius: 100%;
+  cursor: pointer;
+    box-shadow:
+/* Sombras externa */
+inset 0 10px 15px rgba(255,255,255,.35), inset 0 -10px 15px rgba(0,0,0,.05), inset 10px 0 15px rgba(0,0,0,.05), inset -10px 0 15px rgba(0,0,0,.05),
+/* Sombra interna */
+0 5px 20px rgba(0,0,0,.1);
+}

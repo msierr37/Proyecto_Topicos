@@ -1,0 +1,39 @@
+<%= form_for(@article) do |f| %>
+  <% @article.errors.full_messages.each do |message|%>
+    <div class="be-red white err">
+      *<%=message%>
+    </div>
+  <%end%>
+  <div class="field">
+
+    <h5 class="inicio">Privacidad de la canción: </h5>-<%= f.select :privacida, options_for_select([["Publico"], ["Privado"],["Compartido"]]) %>
+  </div>
+  <div class="field">
+    <%= f.text_field :title, placeholder: "Titulo de la canción", class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :artista, placeholder: "Nombre del artista", class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :tamano, placeholder: "Tamaño de la canción en Megabytes", class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :album, placeholder: "Nombre del album", class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :ano, placeholder: "Año de estreno", class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :tiempo, placeholder: "Duración de la canción", class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :body, placeholder: "Descripcion de la canción", style:"height:200px", class:"form-control" %>
+  </div>
+  <div class="field inicio">
+    <%=f.label :mp3 %><br>
+    <%=f.file_field :mp3%>
+  </div>
+  <div class="field">
+      <%=f.submit "Guardar", class:"btn"%>
+  </div>
+<%end %>

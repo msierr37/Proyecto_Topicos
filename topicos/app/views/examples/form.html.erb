@@ -1,0 +1,6 @@
+<h1>Bienvenido <%=@nombre%></h1>
+<%= form_tag :action => 'form' do %>
+<p>nombre:
+<%=password_field_tag 'nombre_usuario', @name %></p>
+<%=submit_tag 'Registrarse'%>
+<%end%>

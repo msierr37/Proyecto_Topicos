@@ -1,0 +1,48 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: postgresql
+  pool: 5
+  username: jsanch81
+  password: 9708
+  host: localhost
+  port: 5432
+
+development:
+  database: db_musica
+  adapter: postgresql
+  pool: 5
+  username: jsanch81
+  password: 9708
+  host: localhost
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  database: db_musica
+  adapter: postgresql
+  pool: 5
+  username: jsanch81
+  password: 9708
+  host: localhost
+  port: 5432
+
+production:
+  database: db_musica
+  adapter: postgresql
+  pool: 5
+  username: jsanch81
+  password: 9708
+  host: localhost
+  port: 5432
