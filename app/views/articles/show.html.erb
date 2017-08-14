@@ -1,0 +1,61 @@
+  <%=render "reload"%>
+<head>
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+  <Script type="text/javascript" src="/js/jquery.jplayer.min.js"></script>
+    <script type="text/javascript">
+    $(document).on('turbolinks:load', function() {
+        $("#jquery_jplayer_1").jPlayer({
+          ready: function () {
+            $(this).jPlayer("setMedia", {
+              mp3: "<%=@article.mp3.url%>"
+            });
+          },
+          swfPath: "/js",
+          wmode: "window",
+          supplied: "mp3",
+          useStateClassSkin: true,
+          autoBlur: false,
+          smoothPlayBar: true,
+          keyEnabled: true,
+          remainingDuration: true,
+          toggleDuration: true
+        });
+      });
+    </script>
+</head>
+
+<body>
+  <h1 class="inicio center-xs col-md"><%= @article.title%></h1>
+  <div class="inicio center-xs col-md">
+    <h5 class="inicio">Artista: <%=@article.artista%></h5>
+    <h5 class="inicio">Tamaño: <%=@article.tamano%> MG</h5>
+    <h5 class="inicio">album: <%=@article.album%></h5>
+    <h5 class="inicio">Año de estreno: <%=@article.ano%></h5>
+    <h5 class="inicio">Duración de la canción: <%=@article.tiempo%></h5>
+    <h8 class="err inicio">Descripción:</h8>
+    <h8 class="inicio"><%=@article.body%></h8>
+
+  <!--this cod is the interface for play the music -->
+  <%=render "reproductor"%>
+
+    <% if not @article.user == nil %>
+      <p class="inicio center-xs">subido por: <%=@article.user.email%></p>
+    <% else %>
+      <p>subido por: cuenta cerrada</p>
+    <% end %>
+    <% if not @article.privacida == "Publico" %>
+
+      <% if user_signed_in? and @article.user.id == current_user.id %>
+        <div class="center-xs col-md">
+          <%=link_to "Editar", edit_article_path(@article), class:"ed"%>
+        </div>
+      <% end %>
+
+    <% elsif user_signed_in? and @article.user.id == current_user.id %>
+        <div class="center-xs col-md">
+          <%=link_to "Editar", edit_article_path(@article), class:"ed"%>
+        </div>
+    <% end %>
+
+  </div>
+</body>
