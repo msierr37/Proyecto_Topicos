@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'search/create'
 
   resources :comments
-  devise_for :users
+devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 resources :articles
   # get "/article"
   # post "/article"

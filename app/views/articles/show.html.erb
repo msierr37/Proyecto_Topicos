@@ -27,14 +27,15 @@
 <body>
   <h1 class="inicio center-xs col-md"><%= @article.title%></h1>
   <div class="inicio center-xs col-md">
-    <h5 class="inicio">Artista: <%=@article.artista%></h5>
-    <h5 class="inicio">Tamaño: <%=@article.tamano%> MG</h5>
-    <h5 class="inicio">album: <%=@article.album%></h5>
-    <h5 class="inicio">Año de estreno: <%=@article.ano%></h5>
-    <h5 class="inicio">Duración de la canción: <%=@article.tiempo%></h5>
-    <h8 class="err inicio">Descripción:</h8>
-    <h8 class="inicio"><%=@article.body%></h8>
-
+    <% cache do %>
+      <h5 class="inicio">Artista: <%=@article.artista%></h5>
+      <h5 class="inicio">Tamaño: <%=@article.tamano%> MG</h5>
+      <h5 class="inicio">album: <%=@article.album%></h5>
+      <h5 class="inicio">Año de estreno: <%=@article.ano%></h5>
+      <h5 class="inicio">Duración de la canción: <%=@article.tiempo%></h5>
+      <h8 class="err inicio">Descripción:</h8>
+      <h8 class="inicio"><%=@article.body%></h8>
+    <%end%>
   <!--this cod is the interface for play the music -->
   <%=render "reproductor"%>
 

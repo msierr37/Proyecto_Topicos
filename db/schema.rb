@@ -46,11 +46,12 @@ ActiveRecord::Schema.define(version: 20170809185249) do
     t.string "last_sign_in_ip"
     t.string "name"
     t.string "permission_level"
+    t.string "uid"
+    t.string "provider"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "articles", "users"
 end
