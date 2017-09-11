@@ -22,6 +22,12 @@
 1. Load balancer: Se uso un servidor para hacer la función del load balancer y poder aumentar la disponibilidad de la app.
 2. Apps: Se usaron dos servidores diferentes para crear dos apps que seran llamadas por el load balancer.
 3. Data base: al igual que las apps se usaron dos servidores para tener 2 bases de datos en modo master slave.
+4. DCA - CentOS 7.1
+5. Intel(R) Xeon(R) CPU     X5660  @ 2.80GHz 
+6. CPU MHz: 2799.269
+7. 2 GB RAM
+8. 20 GB de disco duro
+
 
 ### URL de ejecución 
 http://proyecto25.dis.eafit.edu.co
