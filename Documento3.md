@@ -36,3 +36,4 @@ http://proyecto25.dis.eafit.edu.co
 ### Cambios en la implementación de la aplicación
 
 ## b. Esquemas de pruebas para comprobar el atributo de calidad
+![resultadoPruebas](/imagenes/resultadopruebas.jpg)
