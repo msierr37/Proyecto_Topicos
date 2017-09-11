@@ -34,8 +34,8 @@ Para garantizar la calidad de la aplicación se implementaron mejoras en la disp
 
 ### Cambios en la implementación de la aplicación
 ## Los cambios implementados fueron los siguientes:
-1. Disponibilidad: Con la ayuda de otros servidores se copio la app y se creo load balancer que permite redireccionar los request a una sola app si se llegara a caer una de las 2, además tambien con otra base de datos que nos permite tener un file systems con los datos duplicados para usar la otra en caso de que haya un fallo, y asi garantizar que la app siga corriendo.
-2. Rendimiento: Se implemento un cache para mejorar los tiempos de respuesta, ademas de mejorar las rutas que nos permiten tener las canciones en el file system duplicado; Ademas al tener las apps en 2 servidores el load balancer distribuye las cargas en estas para mejorar el rendimiento de la app.
+1. Disponibilidad: Con la ayuda de otros servidores se copio la app y se creo load balancer que permite redireccionar los request a una sola app si se llegara a caer una de las dos, además tambien con otra base de datos que nos permite tener un file systems con los datos duplicados para usar la otra en caso de que haya un fallo, y asi garantizar que la app siga corriendo.
+2. Rendimiento: Se implemento un cache para mejorar los tiempos de respuesta, tambien se mejoro las rutas que nos permiten tener las canciones en el file system duplicado; Ademas con la implementación de la app en dos servidores el load balancer distribuye las cargas en estas para mejorar el rendimiento de la app.
 3. Seguridad: Se modifico el registro para usar un tercero (Google) lo que garantiza la seguridad a la hora de los usuarios.
 
 ## b. Esquemas de pruebas para comprobar el atributo de calidad
