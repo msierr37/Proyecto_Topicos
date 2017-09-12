@@ -394,3 +394,37 @@ Prefix Verb URI Pattern Controller#Action
                  jsanch81@prod$ sudo systemctl restart httpd
 
                  test: http://10.131.137.239
+## Proyecto 2 QA:
+### Disponibilidad:
+1. Se siguieron los pasos de la siguiente pagina para la que se pudieran hacer conexiones tcp/ip:
+
+http://www.mozmorris.com/2011/11/15/configure-postgresql-to-accept-tcpip-connections.html
+
+2. Luego usamos haproxy para crear un load balancer usando como guia la siguiente pagina:
+
+https://www.server-world.info/en/note?os=CentOS_7&p=haproxy
+
+3. Para configurar las bases de datos de manera que quedaran master-slave nos basamos en información obtenida de la siguiente pagina:
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-on-postgresql-on-an-ubuntu-12-04-vps
+
+### Rendimiento:
+1. Se siguieron los siguientes pasos para configurar un load balancer que nos permitiera mejorar el rendimiento de la app:
+
+https://www.server-world.info/en/note?os=CentOS_7&p=haproxy
+
+2. Para hacer la parte de rsync nos basamos en la pagina:
+
+https://www.server-world.info/en/note?os=CentOS_7&p=rsync
+
+3. Aunque rails implementa un cache por defecto se implemento otro basandonos en:
+
+https://blog.ragnarson.com/2016/11/02/introduction-to-fragment-caching-in-rails.html
+
+### Seguridad
+1. Para hacer el login y sign up de la aplicación con un tercero (Google) usamos la siguiente información:
+
+https://www.interexchange.org/articles/engineering/lets-devise-google-oauth-login/
+
+
+2.
