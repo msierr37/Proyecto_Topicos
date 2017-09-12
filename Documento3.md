@@ -34,13 +34,24 @@ http://proyecto25.dis.eafit.edu.co
 # 3. Implementación y pruebas por atributo de calidad 
 ## a. Implementación
 Para garantizar la calidad de la aplicación se implementaron mejoras en la disponibilidad, rendimiento y seguridad de la misma, para asi lograr una mejor experiencia del usuario; Para medir la capacidad de la aplicación se usaron herramientas como jmeter que nos permitian ver como reaccionaba la app ante diferentes situaciones.
+*Algunos de los pasos seguidos para configurar todo lo correspondiente al tema de calidad fueron los siguientes:*
+1. http://www.mozmorris.com/2011/11/15/configure-postgresql-to-accept-tcpip-connections.html
+2. https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-on-postgresql-on-an-ubuntu-12-04-vps
+3. https://www.server-world.info/en/note?os=CentOS_7&p=haproxy
+
+*Algunos de los pasos seguidos para configurar todo lo correspondiente al tema de seguridad fueron los siguientes:*
+1. https://www.interexchange.org/articles/engineering/lets-devise-google-oauth-login/
+
+*Algunos de los pasos seguidos para configurar todo lo correspondiente al tema de rendimiento fueron los siguientes:*
+1. 
+
 ### Herramientas utilizadas
 1. JMeter
 2. HAProxy
 
 ### Cambios en la implementación de la aplicación
 ## Los cambios implementados fueron los siguientes:
-1. Disponibilidad: Con la ayuda de otros servidores se copio la app y se creo load balancer que permite redireccionar los request a una sola app si se llegara a caer una de las dos, además tambien con otra base de datos que nos permite tener un file systems con los datos duplicados para usar la otra en caso de que haya un fallo, y asi garantizar que la app siga corriendo.
+1. Disponibilidad: Con la ayuda de otros servidores se copio la app y se creo load balancer que permite redireccionar los request a una sola app, si se llegara a caer una de las dos, además tambien con otra base de datos que nos permite tener un file systems con los datos duplicados para usar la otra en caso de que haya un fallo, y asi garantizar que la app siga corriendo.
 2. Rendimiento: Se implemento un cache para mejorar los tiempos de respuesta, tambien se mejoro las rutas que nos permiten tener las canciones en el file system duplicado; Ademas con la implementación de la app en dos servidores el load balancer distribuye las cargas en estas para mejorar el rendimiento de la app.
 3. Seguridad: Se modifico el registro para usar un tercero (Google) lo que garantiza la seguridad a la hora de los usuarios.
 
