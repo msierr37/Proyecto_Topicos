@@ -44,7 +44,9 @@ Para garantizar la calidad de la aplicación se implementaron mejoras en la disp
 
 *Algunos de los pasos seguidos para configurar todo lo correspondiente al tema de rendimiento fueron los siguientes:*
 1. https://www.server-world.info/en/note?os=CentOS_7&p=haproxy
-2.https://www.server-world.info/en/note?os=CentOS_7&p=rsync                        
+
+2.https://www.server-world.info/en/note?os=CentOS_7&p=rsync
+
 3.https://blog.ragnarson.com/2016/11/02/introduction-to-fragment-caching-in-rails.html
 
 ### Herramientas utilizadas
